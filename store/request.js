@@ -1,4 +1,5 @@
-import clientId from '../webConfig'
+import clientId from '../webConfig';
+
 const { create } = require('apisauce');
 
 const baseURL = 'https://api.imgur.com/3';
