@@ -1,39 +1,30 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
-// ESLint configuration
-// http://eslint.org/docs/user-guide/configuring
 module.exports = {
   parser: 'babel-eslint',
-
-  extends: [
-    'airbnb',
-    'plugin:css-modules/recommended',
-    'prettier',
-    'prettier/flowtype',
-    'prettier/react',
-  ],
-
-  plugins: ['css-modules', 'prettier', 'cypress', 'react-hooks'],
-
   env: {
     browser: true,
-    jest: true,
+    es2020: true,
   },
-
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+  ],
   rules: {
     'import/no-absolute-path': [
       2,
       { esmodule: false, commonjs: false, amd: false },
     ],
-    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    // 'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    // 'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     // Forbid the use of extraneous packages
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
     'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
@@ -92,25 +83,16 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'css-modules/no-unused-class': 'off',
 
-    'react/forbid-prop-types': 'off',
     'react/destructuring-assignment': 'off',
     'react/no-access-state-in-setstate': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'warning',
-    'jsx-a11y/click-events-have-key-events': 'warning',
-    camelcase: 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'warn',
+    'jsx-a11y/click-events-have-key-events': 'warn',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    camelcase: 'error',
 
     // ESLint plugin for prettier formatting
     // https://github.com/prettier/eslint-plugin-prettier
-    'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all' }],
-  },
-
-  settings: {
-    // Allow absolute paths in imports, e.g. import Button from 'components/Button'
-    // https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers
-    'import/resolver': {
-      node: {
-        paths: ['./'],
-      },
-    },
+    // 'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all' }],
   },
 };
