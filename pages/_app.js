@@ -6,7 +6,7 @@ import configureStore from '../store/store';
 
 type Props = {
   Component: Node,
-  pageProps?: Object,
+  pageProps: any,
 };
 
 function MyApp({ Component, pageProps }: Props) {
