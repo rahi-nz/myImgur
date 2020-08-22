@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #363a5a;
+  background-color: #9a9a9a;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -27,7 +27,7 @@ body,
   height: 100%;
   overflow-x: hidden;
 }
-
+/***********galleryList*********************/
 .List {
   /*border: 1px solid #d9dddd;*/
 }
@@ -44,6 +44,7 @@ body,
   justify-content: center;
   background-color: #f8f8f0;
   border-radius: 6px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 
 .Card img {
@@ -52,6 +53,7 @@ body,
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
+
 .Card video {
   width: 240px;
   height: 170px;
@@ -64,6 +66,53 @@ body,
   height: 100%;
   overflow-x: hidden;
 }
+
+
+/*********page************************/
 .container {
   height: 100vh;
+}
+
+.filter-Dropdown {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-btn-filter {
+  display: flex;
+  align-items: center;
+}
+.header-btn-filter button {
+  background: darkolivegreen;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.header-btn-filter button:focus {
+  outline: none;
+  width: 150px;
+}
+/**************dropdown**************/
+.Dropdown-container{
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Dropdown-container select {
+  background: darkolivegreen;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  height: 26px;
+  width: 100px;
+}
+
+.Dropdown-container select:focus{
+  outline: none;
 }

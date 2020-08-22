@@ -7,10 +7,10 @@ import {
 import { request } from '../request';
 import { getGalleryServices } from './getGalleryService';
 
-export const getGalleryAction = (page) => async (dispatch) => {
+export const getGalleryAction = (page, section, viral, window) => async (dispatch) => {
   dispatch({ type: GET_GALLERY_REQUEST });
 
-  const response = await request.get(getGalleryServices(page));
+  const response = await request.get(getGalleryServices(page, section, viral, window));
 
   if (response.ok) {
     dispatch({ type: GET_GALLERY_SUCCESS, payload: response.data.data });
