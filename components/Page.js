@@ -1,22 +1,30 @@
 // @flow
-import React, { Node } from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
+import { useDispatch, useSelector } from 'react-redux';
+import { getGalleryAction } from '../store/getGallery/getGalleryAction';
+import GalleryLists from './GalleryList/GalleryList';
 
 type Props = {
-  children: Node,
   title?: string,
 };
 
-export default function Page({
-  children,
-  title = 'This is the default title',
-}: Props) {
+const Page = ({
+  title = 'Home Page',
+}: Props) => {
+  const data = useSelector((state) => state.galleryList.data);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getGalleryAction(0));
+}, []); // eslint-disable-line
+
   return (
-    <section>
+    <section className="container">
       <Head>
         <title>{title}</title>
       </Head>
-      {children}
+      {data && <GalleryLists />}
     </section>
   );
-}
+};
+export default Page;

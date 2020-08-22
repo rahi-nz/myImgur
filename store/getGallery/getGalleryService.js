@@ -1,3 +1,3 @@
-import baseURL from '../request';
+import { baseURL } from '../request';
 
-export const getGalleryServices = () => `${baseURL}/gallery/hot/viral/week/0?showViral=true&mature=true&album_previews=true`;
+export const getGalleryServices = (page) => `${baseURL}/gallery/hot/viral/week/${page}?showViral=true&mature=true&album_previews=true`;

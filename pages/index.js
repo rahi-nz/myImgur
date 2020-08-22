@@ -8,18 +8,17 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>MyImgur</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon-32x32.png" />
+        <link rel="shortcut icon" href="/favicon-96x96.png" />
       </Head>
-      <main className={styles.main}>
-        <Page>flow test</Page>
+      <>
         <h1 className={styles.title}>
           Welcome to myImgur
         </h1>
-        <div className={styles.grid} />
-      </main>
-      <footer className={styles.footer}>
-        <div>footer</div>
-      </footer>
+        <Page />
+      </>
     </div>
   );
 }

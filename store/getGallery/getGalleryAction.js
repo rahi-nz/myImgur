@@ -3,13 +3,14 @@ import {
   GET_GALLERY_REQUEST,
   GET_GALLERY_SUCCESS,
 } from '../constants';
-import request from '../request';
+// eslint-disable-next-line import/named
+import { request } from '../request';
 import { getGalleryServices } from './getGalleryService';
 
-export const getGalleryAction = () => async (dispatch) => {
+export const getGalleryAction = (page) => async (dispatch) => {
   dispatch({ type: GET_GALLERY_REQUEST });
 
-  const response = await request.get(getGalleryServices());
+  const response = await request.get(getGalleryServices(page));
 
   if (response.ok) {
     dispatch({ type: GET_GALLERY_SUCCESS, payload: response.data.data });

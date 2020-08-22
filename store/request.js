@@ -1,4 +1,4 @@
-import clientId from '../webConfig';
+import { clientId } from '../webConfig';
 
 const { create } = require('apisauce');
 
