@@ -25,8 +25,9 @@ declare module 'next/document' {
   declare export var Head: Class<React$Component<any, any>>;
   declare export var Main: Class<React$Component<any, any>>;
   declare export var NextScript: Class<React$Component<any, any>>;
-  // eslint-disable-next-line max-len
-  declare export default Class<React$Component<any, any>> & { getInitialProps: (ctx: {pathname: string, query: any, req?: any, res?: any, err?: any}) => Promise<any>;
+  declare export default Class<React$Component<any, any>> &
+    { getInitialProps: (ctx: {pathname: string, query: any, req?: any, res?: any, err?: any})
+        => Promise<any>;
     renderPage(cb: Function): void;
   };
 }
