@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Page from '../components/Page';
+import Dropdown from '../components/Dropdown/Dropdown';
 
 export default function Home() {
   return (
@@ -14,9 +15,6 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon-96x96.png" />
       </Head>
       <>
-        <h1 className={styles.title}>
-          Welcome to myImgur
-        </h1>
         <Page />
       </>
     </div>

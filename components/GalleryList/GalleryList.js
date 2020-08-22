@@ -6,7 +6,7 @@ import { FixedSizeList as List } from 'react-window';
 // import Link from 'next/link';
 import { getGalleryAction } from '../../store/getGallery/getGalleryAction';
 
-const GalleryLists = () => {
+const GalleryLists = ({ viral, section, window }) => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.galleryList.data);
   const itemsCount = useSelector((state) => state.galleryList.data.length);
@@ -22,7 +22,7 @@ const GalleryLists = () => {
   };
 
   const loadMoreItems = () => {
-    dispatch(getGalleryAction(page));
+    dispatch(getGalleryAction(page, section, viral, window));
     setPage((prevState) => prevState + 1);
   };
 
