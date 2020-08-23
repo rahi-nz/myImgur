@@ -90,20 +90,20 @@ body,
   padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
+  width: 150px;
 }
 .header-btn-filter button:focus {
   outline: none;
-  width: 150px;
 }
 /**************dropdown**************/
-.Dropdown-container{
+.DropdownContainer{
   display: flex;
   margin: 5px;
   justify-content: space-between;
   align-items: center;
 }
 
-.Dropdown-container select {
+.DropdownContainer select {
   background: darkolivegreen;
   border: none;
   color: #fff;
@@ -113,6 +113,6 @@ body,
   width: 100px;
 }
 
-.Dropdown-container select:focus{
+.DropdownContainer select:focus{
   outline: none;
 }

@@ -26,7 +26,7 @@ const GalleryLists = ({ viral, section, window }) => {
     setPage((prevState) => prevState + 1);
   };
 
-  const renderItem = (i) => <div>{i}</div>;
+  const renderItem = (i) => <div>{`${items[i].id} - ${i}`}</div>;
 
   const Item = ({ data, index, style }) => {
     const {
@@ -67,7 +67,7 @@ const GalleryLists = ({ viral, section, window }) => {
     );
   };
   const ListWrapper = ({
-    height, itemCount, width, ref, onItemsRendered,
+    height, itemCount, width, reference, onItemsRendered,
   }) => {
     // How many cards can we show per row, given the current width?
     const columnCount = Math.floor(
@@ -97,7 +97,7 @@ const GalleryLists = ({ viral, section, window }) => {
         width={width}
         itemData={itemData}
         onItemsRendered={onItemsRendered}
-        ref={ref}
+        ref={reference}
       >
         {Item}
       </List>
@@ -111,7 +111,7 @@ const GalleryLists = ({ viral, section, window }) => {
       <AutoSizer>
         {({ height, width }) => (
           <InfiniteLoader
-            isItemLoaded={(index) => isItemLoaded(itemsCount, index)}
+            isItemLoaded={() => isItemLoaded(itemsCount)}
             itemCount={itemsCount}
             loadMoreItems={loadMoreItems}
           >
@@ -121,7 +121,7 @@ const GalleryLists = ({ viral, section, window }) => {
                 itemCount={itemsCount}
                 width={width}
                 onItemsRendered={onItemsRendered}
-                ref={ref}
+                reference={ref}
               />
             )}
           </InfiniteLoader>

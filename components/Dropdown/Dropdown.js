@@ -15,9 +15,9 @@ const Dropdown = ({
   };
 
   return (
-    <div className="Dropdown-container">
+    <div className="DropdownContainer">
       <select value={defaultValue} onChange={handleChange}>
-        {list?.map((el) => <option value={el.value}>{el.value}</option>)}
+        {list?.map((el) => <option key={el.value} value={el.value}>{el.value}</option>)}
       </select>
     </div>
   );
