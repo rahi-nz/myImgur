@@ -48,7 +48,7 @@ const Page = () => {
           }
         </div>
         <div className="header-btn-filter">
-          <button type="button" onClick={handleChangeViral}>{viral ? 'Show viral images' : 'hide viral images'}</button>
+          <button type="button" onClick={handleChangeViral}>{viral ? 'hide viral images' : 'Show viral images' }</button>
         </div>
       </div>
       {data && <GalleryLists viral={viral} section={section} window={window} />}
