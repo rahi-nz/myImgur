@@ -8,7 +8,7 @@ import { request } from '../request';
 import { getGalleryServices } from './getGalleryService';
 
 export const getGalleryAction = (filter, page, section, viral, dateRange) => async (dispatch) => {
-  dispatch({ type: GET_GALLERY_REQUEST });
+  dispatch({ type: GET_GALLERY_REQUEST }, filter);
 
   const response = await request.get(getGalleryServices(page, section, viral, dateRange));
 

@@ -21,28 +21,7 @@ export const ItemContainer = styled.div`
   }
 `;
 
-export const ItemWrapper = styled.div`
-    flex: 1;
-    text-align: center;
-    font-size: 80%;
-    padding: 2rem;
-    box-shadow: 0 5px 6px -6px #777;
-    background: white;
-    border-radius: 6px;
-  }
-`;
-
 export const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-`;
-
-export const ItemWrapperImg = styled.img`
-  width: 100%;
-  height: 180px;
-`;
-
-export const ItemWrapperVideo = styled.video`
-  width: 100%;
-  height: 180px;
 `;

@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
     case GET_GALLERY_REQUEST:
       return {
         ...state,
-        loading: true,
+        loading: !!action.filter,
       };
     case GET_GALLERY_SUCCESS:
       return {
