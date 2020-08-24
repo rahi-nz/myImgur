@@ -1,14 +1,15 @@
 // @flow
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGalleryAction } from '../store/getGallery/getGalleryAction';
-import GalleryLists from './GalleryList/GalleryList';
-import styles from '../styles/Home.module.css';
-import Dropdown from './Dropdown/Dropdown';
-import { sectionList, windowList } from '../webConfig';
+import { getGalleryAction } from '../../store/getGallery/getGalleryAction';
+import GalleryLists from '../GalleryList/GalleryList';
+import {
+  Title, DropdownFilterContainer, FilterViralBtn, FilterViral, DropdownFilterItem, MainContainer,
+} from './style';
+import Dropdown from '../Dropdown/Dropdown';
+import { sectionList, windowList } from '../../webConfig';
 
-const Page = () => {
+const GalleryContainer = () => {
   const [viral, setViral] = useState(false);
   const [section, setSection] = useState('hot');
   const [window, setWindow] = useState('day');
@@ -33,27 +34,24 @@ const Page = () => {
   };
 
   return (
-    <section className="container">
-      <Head>
-        <title>Home Page</title>
-      </Head>
-      <h1 className={styles.title}>
+    <MainContainer>
+      <Title>
         Welcome to myImgur
-      </h1>
-      <div className="filter-Dropdown">
-        <div className="filter-Dropdown-item">
+      </Title>
+      <DropdownFilterContainer>
+        <DropdownFilterItem>
           <Dropdown filterName="section" defaultValue={section} list={sectionList} handleChangeFilter={handleChangeSection} />
           {
             section === 'top' && <Dropdown filterName="date range" defaultValue={window} list={windowList} handleChangeFilter={handleChangeWindow} />
           }
-        </div>
-        <div className="header-btn-filter">
-          <button type="button" onClick={handleChangeViral}>{viral ? 'hide viral images' : 'Show viral images' }</button>
-        </div>
-      </div>
+        </DropdownFilterItem>
+        <FilterViral>
+          <FilterViralBtn type="button" onClick={handleChangeViral}>{viral ? 'hide viral images' : 'Show viral images' }</FilterViralBtn>
+        </FilterViral>
+      </DropdownFilterContainer>
       {data && <GalleryLists viral={viral} section={section} window={window} />}
-    </section>
+    </MainContainer>
   );
 };
 
-export default Page;
+export default GalleryContainer;

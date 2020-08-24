@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { DropdownContainer, DropdownSelect } from './style';
 
 type Props = {
   defaultValue:string,
@@ -15,11 +16,11 @@ const Dropdown = ({
   };
 
   return (
-    <div className="DropdownContainer">
-      <select value={defaultValue} onChange={handleChange}>
+    <DropdownContainer>
+      <DropdownSelect value={defaultValue} onChange={handleChange}>
         {list?.map((el) => <option key={el.value} value={el.value}>{el.value}</option>)}
-      </select>
-    </div>
+      </DropdownSelect>
+    </DropdownContainer>
   );
 };
 export default Dropdown;

@@ -47,10 +47,6 @@
     "*.{md,graphql}": [
       "prettier --write",
       "git add --force"
-    ],
-    "*.{css,less,styl,scss,sass,sss}": [
-      "stylelint --fix",
-      "git add --force"
     ]
   },
   "husky": {
