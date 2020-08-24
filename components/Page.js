@@ -18,7 +18,7 @@ const Page = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getGalleryAction(0, section, viral, window));
+    dispatch(getGalleryAction(1, section, viral, window));
 }, [viral,section,window]); // eslint-disable-line
   const handleChangeViral = () => {
     setViral((prevState) => !prevState);

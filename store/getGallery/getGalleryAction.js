@@ -14,7 +14,7 @@ export const getGalleryAction = (page, section, viral, window) => async (dispatc
 
   if (response.ok) {
     dispatch({ type: GET_GALLERY_SUCCESS, payload: response.data.data });
-    return response;
+    return response.data.data;
   }
 
   dispatch({ type: GET_GALLERY_FAILURE });
