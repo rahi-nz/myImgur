@@ -1,3 +1,4 @@
-import baseURL from '../request';
+// eslint-disable-next-line import/named
+import { baseURL } from '../request';
 
-export const getGalleryServices = () => `${baseURL}/gallery/hot/viral/week/0?showViral=true&mature=true&album_previews=true`;
+export const getGalleryServices = (page, section, viral, dateRange) => `${baseURL}/gallery/${section}/viral/${dateRange}/${page}?showViral=${viral}&mature=true&album_previews=true`;

@@ -3,17 +3,18 @@ import {
   GET_GALLERY_REQUEST,
   GET_GALLERY_SUCCESS,
 } from '../constants';
-import request from '../request';
+// eslint-disable-next-line import/named
+import { request } from '../request';
 import { getGalleryServices } from './getGalleryService';
 
-export const getGalleryAction = () => async (dispatch) => {
-  dispatch({ type: GET_GALLERY_REQUEST });
+export const getGalleryAction = (filter, page, section, viral, dateRange) => async (dispatch) => {
+  dispatch({ type: GET_GALLERY_REQUEST }, filter);
 
-  const response = await request.get(getGalleryServices());
+  const response = await request.get(getGalleryServices(page, section, viral, dateRange));
 
   if (response.ok) {
-    dispatch({ type: GET_GALLERY_SUCCESS, payload: response.data.data });
-    return response;
+    dispatch({ type: GET_GALLERY_SUCCESS, payload: { data: response.data.data, filter } });
+    return response.data.data;
   }
 
   dispatch({ type: GET_GALLERY_FAILURE });

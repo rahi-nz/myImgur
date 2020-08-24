@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  data: null,
+  data: [],
   error: false,
 };
 
@@ -16,13 +16,13 @@ export default (state = initialState, action) => {
     case GET_GALLERY_REQUEST:
       return {
         ...state,
-        loading: true,
+        loading: !!action.filter,
       };
     case GET_GALLERY_SUCCESS:
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: action.payload.filter ? action.payload.data : [...state.data, ...action.payload.data],
       };
     case GET_GALLERY_FAILURE:
       return {

@@ -20,12 +20,15 @@
     "react-dom": "16.13.1",
     "react-redux": "^7.2.1",
     "react-redux-loading-bar": "^5.0.0",
+    "react-virtuoso": "^0.20.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "babel-eslint": "8.2.6",
+    "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -44,10 +47,6 @@
     ],
     "*.{md,graphql}": [
       "prettier --write",
-      "git add --force"
-    ],
-    "*.{css,less,styl,scss,sass,sss}": [
-      "stylelint --fix",
       "git add --force"
     ]
   },
