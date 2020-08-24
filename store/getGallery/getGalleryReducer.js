@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        data: [...state.data, ...action.payload],
+        data: action.payload.filter ? action.payload.data : [...state.data, ...action.payload.data],
       };
     case GET_GALLERY_FAILURE:
       return {

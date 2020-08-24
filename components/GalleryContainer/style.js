@@ -7,6 +7,7 @@ export const MainContainer = styled.section`
 export const Title = styled.h1`
   font-size: 24px;
   text-align: center;
+  color: #A65215;
 `;
 
 export const DropdownFilterContainer = styled.div`
@@ -19,14 +20,32 @@ export const DropdownFilterItem = styled.div`
   flex-direction: column;
   }
 `;
+
 export const FilterViral = styled.div`
   display: flex;
   align-items: center;
   }
 `;
 
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+`;
+
+export const LoadingGif = styled.img`
+  width: 200px;
+  }
+`;
+
+export const LoadingTitle = styled.p`
+  color: #A65215;
+  }
+`;
+
 export const FilterViralBtn = styled.button`
-  background: darkolivegreen;
+  background: #F58535;
   color: #fff;
   box-shadow: none;
   border: none;

@@ -4,7 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getGalleryAction } from '../../store/getGallery/getGalleryAction';
 import GalleryLists from '../GalleryList/GalleryList';
 import {
-  Title, DropdownFilterContainer, FilterViralBtn, FilterViral, DropdownFilterItem, MainContainer,
+  Title,
+  DropdownFilterContainer,
+  FilterViralBtn,
+  FilterViral,
+  DropdownFilterItem,
+  MainContainer,
+  LoadingContainer,
+  LoadingGif,
+  LoadingTitle,
 } from './style';
 import Dropdown from '../Dropdown/Dropdown';
 import { sectionList, windowList } from '../../webConfig';
@@ -12,15 +20,21 @@ import { sectionList, windowList } from '../../webConfig';
 const GalleryContainer = () => {
   const [viral, setViral] = useState(false);
   const [section, setSection] = useState('hot');
-  const [window, setWindow] = useState('day');
+  const [dateRange, setDateRange] = useState('day');
+  const [filterLoading, setFilterLoading] = useState(false);
 
-  const data = useSelector((state) => state.galleryList.data);
+  const loading = useSelector((state) => state.galleryList.loading);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getGalleryAction(1, section, viral, window));
-}, [viral,section,window]); // eslint-disable-line
+    (async () => {
+      setFilterLoading(true);
+      await dispatch(getGalleryAction(true, 1, section, viral, dateRange));
+      setFilterLoading(false);
+    })();
+  }, [viral,section,dateRange]); // eslint-disable-line
+
   const handleChangeViral = () => {
     setViral((prevState) => !prevState);
   };
@@ -30,7 +44,7 @@ const GalleryContainer = () => {
   };
 
   const handleChangeWindow = (value) => {
-    setWindow(value);
+    setDateRange(value);
   };
 
   return (
@@ -49,7 +63,12 @@ const GalleryContainer = () => {
           <FilterViralBtn type="button" onClick={handleChangeViral}>{viral ? 'hide viral images' : 'Show viral images' }</FilterViralBtn>
         </FilterViral>
       </DropdownFilterContainer>
-      {data && <GalleryLists viral={viral} section={section} window={window} />}
+      {loading || filterLoading ? (
+        <LoadingContainer>
+          <LoadingTitle>loading Data ...</LoadingTitle>
+          <LoadingGif alt="MyImgur" src="/loading.gif" />
+        </LoadingContainer>
+      ) : <GalleryLists viral={viral} section={section} dateRange={dateRange} />}
     </MainContainer>
   );
 };
