@@ -7,7 +7,7 @@ export const DropdownContainer = styled.div`
   align-items: center;
 `;
 export const DropdownSelect = styled.select`
-  background: darkolivegreen;
+  background: #F58535;
   border: none;
   color: #fff;
   border-radius: 6px;

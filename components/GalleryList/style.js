@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ItemContainer = styled.div`
   padding: 0.5rem;
   width: 25%;
-  background: #f5f5f5;
+  background: #99B0DD;
   display: flex;
   flex: none;
   align-content: stretch;
@@ -35,4 +35,14 @@ export const ItemWrapper = styled.div`
 export const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+`;
+
+export const ItemWrapperImg = styled.img`
+  width: 100%;
+  height: 180px;
+`;
+
+export const ItemWrapperVideo = styled.video`
+  width: 100%;
+  height: 180px;
 `;
