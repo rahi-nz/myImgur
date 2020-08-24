@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  data: null,
+  data: [],
   error: false,
 };
 
@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: [...state.data, ...action.payload],
       };
     case GET_GALLERY_FAILURE:
       return {
