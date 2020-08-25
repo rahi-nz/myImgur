@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 // eslint-disable-next-line import/named
 import { request } from '../../store/request';
@@ -19,11 +19,19 @@ import {
 } from './style';
 
 type Props = {
-  data: Array<string>
+  query: Object
 };
 
-const Image = ({ data }:Props) => {
-  const galleryImage = data.data.data;
+const Image = ({ query }:Props) => {
+  const [galleryImage, setGalleryImage] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const data = await request.get(getGalleryImage(query.id));
+      setGalleryImage(data.data.data);
+    })();
+  });
+
   return (
     <div>
       <Head>
@@ -69,9 +77,6 @@ const Image = ({ data }:Props) => {
   );
 };
 
-Image.getInitialProps = async ({ query }) => {
-  const data = await request.get(getGalleryImage(query.id));
-  return { data };
-};
+Image.getInitialProps = async ({ query }) => ({ query });
 
 export default Image;

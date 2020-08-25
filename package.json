@@ -7,9 +7,7 @@
     "dev": "next dev -p 3030",
     "build": "next build",
     "start": "next start",
-    "flow": "flow",
-    "lint": "eslint ./",
-    "format": "npm run lint -- --fix"
+    "flow": "flow"
   },
   "dependencies": {
     "apisauce": "^1.1.2",
@@ -27,7 +25,10 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
     "babel-eslint": "8.2.6",
+    "babel-jest": "^26.3.0",
     "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
     "eslint": "^7.7.0",
@@ -37,6 +38,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "flow-bin": "^0.131.0",
+    "flow-typed": "^3.2.1",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lint-staged": "^10.2.11"

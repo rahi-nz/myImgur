@@ -33,5 +33,6 @@ export const ItemWrapper = styled.div`
     box-shadow: 0 5px 6px -6px #777;
     background: #c7d4ec;
     border-radius: 6px;
+    width: 100%;
   }
 `;
