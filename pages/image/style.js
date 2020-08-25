@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ItemWrapperVideo = styled.video`
   height: 300px;
   background: #000;
+  margin: 10px;
 `;
 
 export const ItemWrapperImg = styled.img`
@@ -17,7 +18,7 @@ export const DescriptionContainer = styled.div`
   margin: 30px auto;
   display: flex;
   background: #f5f3f3;
-  height: 100vh;
+  height: auto;
   border-radius: 6px;
   
   @media (max-width: 1200px) {

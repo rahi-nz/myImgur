@@ -69,9 +69,13 @@ const GalleryContainer = () => {
       </Title>
       <DropdownFilterContainer>
         <DropdownFilterItem>
-          <Dropdown filterName="section" defaultValue={section} list={sectionList} handleChangeFilter={handleChangeSection} />
+          <Dropdown
+            defaultValue={section}
+            list={sectionList}
+            handleChangeFilter={handleChangeSection}
+          />
           {
-            section === 'top' && <Dropdown filterName="date range" defaultValue={dateRange} list={dateRangeList} handleChangeFilter={handleChangeWindow} />
+            section === 'top' && <Dropdown defaultValue={dateRange} list={dateRangeList} handleChangeFilter={handleChangeWindow} />
           }
         </DropdownFilterItem>
         <FilterViral>

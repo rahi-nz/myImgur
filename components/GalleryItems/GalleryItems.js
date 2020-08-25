@@ -21,7 +21,7 @@ const GalleryItems = ({ index }:Props) => {
         <Link href={`/image/${items[index]?.id}`}>
           <a>
             {items[index]?.images[0].type === 'video/mp4' ? (
-              <div>
+              <div data-test-id="video-wrapper">
                 <ItemWrapperVideo autoPlay loop muted preload="auto">
                   <source
                     type="video/mp4"
@@ -29,12 +29,12 @@ const GalleryItems = ({ index }:Props) => {
                   />
                 </ItemWrapperVideo>
               </div>
-              ) : (
-                <ItemWrapperImg
-                  src={coverSrc}
-                  alt={items[index]?.title}
-                />
-              )}
+            ) : (
+              <ItemWrapperImg
+                src={coverSrc}
+                alt={items[index]?.title}
+              />
+            )}
             <ItemWrapperTitle>{items[index]?.title}</ItemWrapperTitle>
           </a>
         </Link>
