@@ -24,4 +24,6 @@ export const ItemContainer = styled.div`
 export const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
 `;

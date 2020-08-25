@@ -31,6 +31,7 @@ export const Details = styled.div`
   
   @media (max-width: 1200px) {
     width: 100%;
+    order: 1;
   }
 `;
 
@@ -50,6 +51,7 @@ export const ImagesContainer = styled.div`
   
   @media (max-width: 1200px) {
     width: 100%;
+    order: 2;
   }
 `;
 
