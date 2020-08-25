@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown/> Should render correctly 1`] = `
+<div
+  className="style__DropdownContainer-sc-1irrfnv-0 koxyMh"
+>
+  <select
+    className="style__DropdownSelect-sc-1irrfnv-1 cIWSah"
+    onChange={[Function]}
+  />
+</div>
+`;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ItemContainer = styled.div`
   padding: 0.5rem;
   width: 25%;
-  background: #99B0DD;
+  background: #E7DFDC;
   display: flex;
   flex: none;
   align-content: stretch;
@@ -24,4 +24,6 @@ export const ItemContainer = styled.div`
 export const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
 `;

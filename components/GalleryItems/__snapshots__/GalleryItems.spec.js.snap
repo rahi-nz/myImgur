@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GalleryItems /> Should render correctly 1`] = `
+<div
+  className="style__ItemWrapper-sc-1nmiqb7-3 jXOryF"
+>
+  <a
+    href="/album/Znq9l9n"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      data-test-id="video-wrapper"
+    >
+      <video
+        autoPlay={true}
+        className="style__ItemWrapperVideo-sc-1nmiqb7-1 djFQqb"
+        loop={true}
+        muted={true}
+        preload="auto"
+      >
+        <source
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <p
+      className="style__ItemWrapperTitle-sc-1nmiqb7-2 jaKrQv"
+    >
+      LEGO loom makes beautiful scarves
+    </p>
+  </a>
+</div>
+`;

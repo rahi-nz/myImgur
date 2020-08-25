@@ -16,39 +16,28 @@ const GalleryItems = ({ index }:Props) => {
     ? items[index]?.images.find((el) => el.id === items[index]?.cover)?.link
     : items[index]?.link;
   return (
-    items[index]?.images ? (
-      <ItemWrapper>
-        <Link href={`/image/${items[index]?.id}`}>
-          <a>
-            {items[index]?.images[0].type === 'video/mp4' ? (
-              <div>
-                <ItemWrapperVideo autoPlay loop muted>
-                  <source
-                    type="video/mp4"
-                    src={coverSrc}
-                  />
-                </ItemWrapperVideo>
-              </div>
-              ) : (
-                <ItemWrapperImg
+    <ItemWrapper>
+      <Link href={`/album/${items[index]?.id}`}>
+        <a>
+          {items[index]?.images[0].type === 'video/mp4' ? (
+            <div data-test-id="video-wrapper">
+              <ItemWrapperVideo autoPlay loop muted preload="auto">
+                <source
+                  type="video/mp4"
                   src={coverSrc}
-                  alt={items[index]?.title}
                 />
-              )}
-            <ItemWrapperTitle>{items[index]?.title}</ItemWrapperTitle>
-          </a>
-        </Link>
-      </ItemWrapper>
-    ) : (
-      <ItemWrapper>
-        <Link href={`/image/${items[index]?.id}`}>
-          <a>
-            <ItemWrapperImg src={coverSrc} alt={items[index]?.title} />
-            <ItemWrapperTitle>{items[index]?.title}</ItemWrapperTitle>
-          </a>
-        </Link>
-      </ItemWrapper>
-    )
+              </ItemWrapperVideo>
+            </div>
+          ) : (
+            <ItemWrapperImg
+              src={coverSrc}
+              alt={items[index]?.title}
+            />
+          )}
+          <ItemWrapperTitle>{items[index]?.title}</ItemWrapperTitle>
+        </a>
+      </Link>
+    </ItemWrapper>
   );
 };
 export default GalleryItems;

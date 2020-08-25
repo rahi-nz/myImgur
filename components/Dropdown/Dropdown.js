@@ -4,7 +4,7 @@ import { DropdownContainer, DropdownSelect } from './style';
 
 type Props = {
   defaultValue:string,
-  list: Array<string>,
+  list: Array<{value: string}>,
   handleChangeFilter: Function
 };
 

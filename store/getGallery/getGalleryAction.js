@@ -11,12 +11,13 @@ export const getGalleryAction = (filter, page, section, viral, dateRange) => asy
   dispatch({ type: GET_GALLERY_REQUEST }, filter);
 
   const response = await request.get(getGalleryServices(page, section, viral, dateRange));
+  const data = response.data.data.filter((el) => el.is_album);
 
   if (response.ok) {
-    dispatch({ type: GET_GALLERY_SUCCESS, payload: { data: response.data.data, filter } });
+    dispatch({ type: GET_GALLERY_SUCCESS, payload: { data, filter } });
     return response.data.data;
   }
 
   dispatch({ type: GET_GALLERY_FAILURE });
-  return false;
+  return response;
 };

@@ -15,7 +15,7 @@ import {
   LoadingTitle,
 } from './style';
 import Dropdown from '../Dropdown/Dropdown';
-import { sectionList, windowList } from '../../webConfig';
+import { sectionList, dateRangeList } from '../../webConfig';
 
 const GalleryContainer = () => {
   const [viral, setViral] = useState(false);
@@ -24,6 +24,7 @@ const GalleryContainer = () => {
   const [filterLoading, setFilterLoading] = useState(false);
 
   const loading = useSelector((state) => state.galleryList.loading);
+  const error = useSelector((state) => state.galleryList.error);
 
   const dispatch = useDispatch();
 
@@ -47,6 +48,20 @@ const GalleryContainer = () => {
     setDateRange(value);
   };
 
+  const renderComponent = () => {
+    if (error) {
+      return <div>error</div>;
+    } if (loading || filterLoading) {
+      return (
+        <LoadingContainer>
+          <LoadingTitle>loading Data ...</LoadingTitle>
+          <LoadingGif alt="MyImgur" src="/loading/loading.gif" />
+        </LoadingContainer>
+      );
+    }
+    return <GalleryLists viral={viral} section={section} dateRange={dateRange} />;
+  };
+
   return (
     <MainContainer>
       <Title>
@@ -54,21 +69,20 @@ const GalleryContainer = () => {
       </Title>
       <DropdownFilterContainer>
         <DropdownFilterItem>
-          <Dropdown filterName="section" defaultValue={section} list={sectionList} handleChangeFilter={handleChangeSection} />
+          <Dropdown
+            defaultValue={section}
+            list={sectionList}
+            handleChangeFilter={handleChangeSection}
+          />
           {
-            section === 'top' && <Dropdown filterName="date range" defaultValue={window} list={windowList} handleChangeFilter={handleChangeWindow} />
+            section === 'top' && <Dropdown defaultValue={dateRange} list={dateRangeList} handleChangeFilter={handleChangeWindow} />
           }
         </DropdownFilterItem>
         <FilterViral>
           <FilterViralBtn type="button" onClick={handleChangeViral}>{viral ? 'hide viral images' : 'Show viral images' }</FilterViralBtn>
         </FilterViral>
       </DropdownFilterContainer>
-      {loading || filterLoading ? (
-        <LoadingContainer>
-          <LoadingTitle>loading Data ...</LoadingTitle>
-          <LoadingGif alt="MyImgur" src="/loading.gif" />
-        </LoadingContainer>
-      ) : <GalleryLists viral={viral} section={section} dateRange={dateRange} />}
+      {renderComponent()}
     </MainContainer>
   );
 };

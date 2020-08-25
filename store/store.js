@@ -8,9 +8,9 @@ const configureStore = (initialState = {}) => {
   const isDev = process.env.NODE_ENV === 'development';
 
   // add redux devtools (only in browser and in dev mode)
-  const composeEnhancers =
-    (isDev && !isServer && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || // eslint-disable-line no-underscore-dangle
-    compose;
+  // eslint-disable-next-line max-len
+  const composeEnhancers = (isDev && !isServer && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) // eslint-disable-line no-underscore-dangle
+    || compose;
 
   // add redux loading bar middleware
   const loadingMD = loadingBarMiddleware({
