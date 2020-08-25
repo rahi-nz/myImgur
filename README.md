@@ -17,6 +17,18 @@ yarn dev
 open http://localhost:3030
 ```
 
+# Run test
+
+```bash
+yarn test
+```
+
+# Run flow
+
+```bash
+yarn flow
+```
+
 # Technology
 
 - JavaScript framework: Next.js <br />

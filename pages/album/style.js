@@ -41,6 +41,7 @@ export const Details = styled.div`
 
 export const Description = styled.p`
   color: #A65215;
+  padding: 5px;
 `;
 
 export const DescriptionTitle = styled.p`
