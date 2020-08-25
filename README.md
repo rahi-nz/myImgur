@@ -2,8 +2,7 @@
 simple web app that allows one to browse the Imgur gallery using 
 [imgur](https://api.imgur.com)
 
-#Usage
-
+# Usage
 ```bash
 npm install
 ```
@@ -15,7 +14,7 @@ Or, if yarn is your thing:
  open http://localhost:3030
  ```
 
-#Technology
+# Technology
 JavaScript framework: Next.js <br />
 Type checking: Flow <br />
 HTTP client: Apisauce/built with Axios <br />
