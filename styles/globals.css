@@ -2,9 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #99B0DD;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #E7DFDC;
+  font-family: 'Indie Flower', cursive;
 }
 
 a {

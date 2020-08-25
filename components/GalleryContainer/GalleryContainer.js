@@ -55,7 +55,7 @@ const GalleryContainer = () => {
       return (
         <LoadingContainer>
           <LoadingTitle>loading Data ...</LoadingTitle>
-          <LoadingGif alt="MyImgur" src="/loading.gif" />
+          <LoadingGif alt="MyImgur" src="/loading/loading.gif" />
         </LoadingContainer>
       );
     }

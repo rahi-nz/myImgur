@@ -8,11 +8,12 @@ export const DropdownContainer = styled.div`
 `;
 export const DropdownSelect = styled.select`
   background: #F58535;
+  font-family: 'Indie Flower', cursive;
   border: none;
   color: #fff;
   border-radius: 6px;
   padding: 5px 10px;
-  height: 26px;
+  height: 30px;
   width: 100px;
   &:focus {
     outline: none;

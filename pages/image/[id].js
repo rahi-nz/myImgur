@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 // eslint-disable-next-line import/named
 import { request } from '../../store/request';
@@ -15,23 +15,35 @@ import {
   VoteContainer,
   Vote,
   Span,
-  VoteWrapper,
+  ScoreWrapper,
+  LikeWrapper,
+  DislikeWrapper,
+  SpanDown,
 } from './style';
 
 type Props = {
-  data: Array<string>
+  query: Object
 };
 
-const Image = ({ data }:Props) => {
-  const galleryImage = data.data.data;
+const Image = ({ query }:Props) => {
+  const [galleryImage, setGalleryImage] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const data = await request.get(getGalleryImage(query.id));
+      setGalleryImage(data.data.data);
+    })();
+  });
+
   return (
     <div>
       <Head>
         <title>{galleryImage?.title || 'Details'}</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon-16x16.png" />
-        <link rel="shortcut icon" href="/favicon-32x32.png" />
-        <link rel="shortcut icon" href="/favicon-96x96.png" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon/favicon-32x32.png" />
+        <link rel="shortcut icon" href="/favicon/favicon-96x96.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
       </Head>
       <DescriptionContainer>
         <ImagesContainer>
@@ -50,18 +62,18 @@ const Image = ({ data }:Props) => {
         <Details>
           <Description>{galleryImage?.title || 'Description'}</Description>
           <VoteContainer>
-            <VoteWrapper>
-              <Vote src="/like.svg" alt="like" />
-              <Span>{galleryImage?.downs}</Span>
-            </VoteWrapper>
-            <VoteWrapper>
-              <Vote src="/disLike.svg" alt="dislike" />
+            <LikeWrapper>
+              <Vote src="/icon/like.svg" alt="like" />
               <Span>{galleryImage?.ups}</Span>
-            </VoteWrapper>
-            <VoteWrapper>
-              <Vote src="/score.png" alt="score" />
+            </LikeWrapper>
+            <DislikeWrapper>
+              <Vote src="/icon/disLike.svg" alt="dislike" />
+              <SpanDown>{galleryImage?.downs}</SpanDown>
+            </DislikeWrapper>
+            <ScoreWrapper>
+              <Vote src="/icon/score.svg" alt="score" />
               <Span>{galleryImage?.score}</Span>
-            </VoteWrapper>
+            </ScoreWrapper>
           </VoteContainer>
         </Details>
       </DescriptionContainer>
@@ -69,9 +81,6 @@ const Image = ({ data }:Props) => {
   );
 };
 
-Image.getInitialProps = async ({ query }) => {
-  const data = await request.get(getGalleryImage(query.id));
-  return { data };
-};
+Image.getInitialProps = async ({ query }) => ({ query });
 
 export default Image;

@@ -16,6 +16,9 @@ export const DescriptionContainer = styled.div`
   width: 70%;
   margin: 30px auto;
   display: flex;
+  background: #f5f3f3;
+  height: 100vh;
+  border-radius: 6px;
   
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -36,11 +39,11 @@ export const Details = styled.div`
 `;
 
 export const Description = styled.p`
-  color: #fff;
+  color: #A65215;
 `;
 
 export const DescriptionTitle = styled.p`
-  color: #fff;
+  color: #A65215;
   font-size: 14px;
 `;
 
@@ -48,10 +51,13 @@ export const ImagesContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  border-right: 1px solid #E7DFDC;
+  padding: 10px;
   
   @media (max-width: 1200px) {
     width: 100%;
     order: 2;
+    border-right: 0;
   }
 `;
 
@@ -64,13 +70,34 @@ export const Vote = styled.img`
 `;
 
 export const Span = styled.span`
-  color: #fff;
-  margin-top: 5px;
+  color: #A65215;
+  margin-top: 15px;
+  font-size: 16px;
 `;
 
-export const VoteWrapper = styled.div`
+export const SpanDown = styled.span`
+  color: #A65215;
+  margin-top: 5px;
+  font-size: 16px;
+`;
+
+export const ScoreWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
+`;
+
+export const LikeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+`;
+
+export const DislikeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 10px 10px;
 `;

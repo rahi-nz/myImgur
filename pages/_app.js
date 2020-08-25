@@ -1,12 +1,12 @@
 // @flow
-import React, { Node } from 'react';
+import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import '../styles/globals.css';
 import configureStore from '../store/store';
 
 type Props = {
-  Component: Node,
-  pageProps: any,
+  Component: Function,
+  pageProps: Object,
 };
 
 function MyApp({ Component, pageProps }: Props) {

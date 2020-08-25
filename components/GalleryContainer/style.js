@@ -47,6 +47,7 @@ export const LoadingTitle = styled.p`
 export const FilterViralBtn = styled.button`
   background: #F58535;
   color: #fff;
+  font-family: 'Indie Flower', cursive;
   box-shadow: none;
   border: none;
   padding: 5px 10px;
