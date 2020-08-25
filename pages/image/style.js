@@ -52,6 +52,7 @@ export const ImagesContainer = styled.div`
   flex-direction: column;
   width: 50%;
   border-right: 1px solid #E7DFDC;
+  padding: 10px;
   
   @media (max-width: 1200px) {
     width: 100%;
