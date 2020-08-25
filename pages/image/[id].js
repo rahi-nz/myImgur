@@ -36,10 +36,10 @@ const Image = ({ query }:Props) => {
     <div>
       <Head>
         <title>{galleryImage?.title || 'Details'}</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon-16x16.png" />
-        <link rel="shortcut icon" href="/favicon-32x32.png" />
-        <link rel="shortcut icon" href="/favicon-96x96.png" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon/favicon-32x32.png" />
+        <link rel="shortcut icon" href="/favicon/favicon-96x96.png" />
       </Head>
       <DescriptionContainer>
         <ImagesContainer>
@@ -59,15 +59,15 @@ const Image = ({ query }:Props) => {
           <Description>{galleryImage?.title || 'Description'}</Description>
           <VoteContainer>
             <VoteWrapper>
-              <Vote src="/like.svg" alt="like" />
+              <Vote src="/icon/like.svg" alt="like" />
               <Span>{galleryImage?.downs}</Span>
             </VoteWrapper>
             <VoteWrapper>
-              <Vote src="/disLike.svg" alt="dislike" />
+              <Vote src="/icon/disLike.svg" alt="dislike" />
               <Span>{galleryImage?.ups}</Span>
             </VoteWrapper>
             <VoteWrapper>
-              <Vote src="/score.png" alt="score" />
+              <Vote src="/icon/score.png" alt="score" />
               <Span>{galleryImage?.score}</Span>
             </VoteWrapper>
           </VoteContainer>

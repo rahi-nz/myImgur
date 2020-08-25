@@ -7,10 +7,10 @@ export default function Home() {
     <div>
       <Head>
         <title>MyImgur</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon-16x16.png" />
-        <link rel="shortcut icon" href="/favicon-32x32.png" />
-        <link rel="shortcut icon" href="/favicon-96x96.png" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon/favicon-32x32.png" />
+        <link rel="shortcut icon" href="/favicon/favicon-96x96.png" />
       </Head>
       <GalleryContainer />
     </div>
