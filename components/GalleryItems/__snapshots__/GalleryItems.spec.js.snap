@@ -5,7 +5,7 @@ exports[`<GalleryItems /> Should render correctly 1`] = `
   className="style__ItemWrapper-sc-1nmiqb7-3 jXOryF"
 >
   <a
-    href="/image/Znq9l9n"
+    href="/album/Znq9l9n"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >

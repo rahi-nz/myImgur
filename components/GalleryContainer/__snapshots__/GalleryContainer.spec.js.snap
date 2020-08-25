@@ -92,7 +92,7 @@ exports[`<GalleryContainer /> Should render correctly 1`] = `
             className="style__ItemWrapper-sc-1nmiqb7-3 jXOryF"
           >
             <a
-              href="/image/undefined"
+              href="/album/undefined"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
