@@ -22,7 +22,7 @@ const GalleryItems = ({ index }:Props) => {
           <a>
             {items[index]?.images[0].type === 'video/mp4' ? (
               <div>
-                <ItemWrapperVideo autoPlay loop muted>
+                <ItemWrapperVideo autoPlay loop muted preload="auto">
                   <source
                     type="video/mp4"
                     src={coverSrc}

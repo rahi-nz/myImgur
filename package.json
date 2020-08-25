@@ -38,6 +38,7 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "flow-bin": "^0.131.0",
     "husky": "^4.2.5",
+    "jest": "^26.4.2",
     "lint-staged": "^10.2.11"
   },
   "lint-staged": {

@@ -27,8 +27,7 @@ export default (state = initialState, action) => {
     case GET_GALLERY_FAILURE:
       return {
         ...state,
-        loading: false,
-        error: true,
+        error: false,
       };
 
     default:

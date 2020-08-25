@@ -30,12 +30,7 @@ const GalleryLists = ({ section, viral, dateRange }:Props) => {
       ListContainer={ListContainer}
       endReached={() => loadMore()}
       item={(index) => <GalleryItems index={index} />}
-      style={{ height: '100vh', width: '70%', margin: 'auto' }}
-      footer={() => (
-        <div style={{ padding: '2rem', textAlign: 'center' }}>
-          Loading...
-        </div>
-      )}
+      style={{ height: '100vh' }}
     />
   );
 };

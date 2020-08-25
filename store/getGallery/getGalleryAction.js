@@ -18,5 +18,5 @@ export const getGalleryAction = (filter, page, section, viral, dateRange) => asy
   }
 
   dispatch({ type: GET_GALLERY_FAILURE });
-  return false;
+  return response;
 };
