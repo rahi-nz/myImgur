@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GalleryContainer /> Should render correctly 1`] = `
+<section
+  className="style__MainContainer-sc-15myhzc-0 eiHNiJ"
+>
+  <h1
+    className="style__Title-sc-15myhzc-1 eZVBtB"
+  >
+    Welcome to myImgur
+  </h1>
+  <div
+    className="style__DropdownFilterContainer-sc-15myhzc-2 iSKiKn"
+  >
+    <div
+      className="style__DropdownFilterItem-sc-15myhzc-3 lgmho"
+    >
+      <div
+        className="style__DropdownContainer-sc-1irrfnv-0 koxyMh"
+      >
+        <select
+          className="style__DropdownSelect-sc-1irrfnv-1 cIWSah"
+          onChange={[Function]}
+          value="hot"
+        >
+          <option
+            value="hot"
+          >
+            hot
+          </option>
+          <option
+            value="top"
+          >
+            top
+          </option>
+          <option
+            value="user"
+          >
+            user
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      className="style__FilterViral-sc-15myhzc-4 jRgQlB"
+    >
+      <button
+        className="style__FilterViralBtn-sc-15myhzc-8 foYqGx"
+        data-test-id="viral-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Show viral images
+      </button>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitOverflowScrolling": "touch",
+        "height": "100vh",
+        "outline": "none",
+        "overflowY": "auto",
+        "position": "relative",
+      }
+    }
+    tabIndex={0}
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="style__ListContainer-sc-1q4dzrq-1 iDuWjS virtuoso-grid-list"
+        style={
+          Object {
+            "paddingBottom": "0px",
+            "paddingTop": "0px",
+          }
+        }
+      >
+        <div
+          className="style__ItemContainer-sc-1q4dzrq-0 hkdzmM virtuoso-grid-item"
+        >
+          <div
+            className="style__ItemWrapper-sc-1nmiqb7-3 jXOryF"
+          >
+            <a
+              href="/image/undefined"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <img
+                className="style__ItemWrapperImg-sc-1nmiqb7-0 fVhjXU"
+              />
+              <p
+                className="style__ItemWrapperTitle-sc-1nmiqb7-2 jaKrQv"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
