@@ -15,7 +15,10 @@ import {
   VoteContainer,
   Vote,
   Span,
-  VoteWrapper,
+  ScoreWrapper,
+  LikeWrapper,
+  DislikeWrapper,
+  SpanDown,
 } from './style';
 
 type Props = {
@@ -40,6 +43,7 @@ const Image = ({ query }:Props) => {
         <link rel="shortcut icon" href="/favicon/favicon-16x16.png" />
         <link rel="shortcut icon" href="/favicon/favicon-32x32.png" />
         <link rel="shortcut icon" href="/favicon/favicon-96x96.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
       </Head>
       <DescriptionContainer>
         <ImagesContainer>
@@ -58,18 +62,18 @@ const Image = ({ query }:Props) => {
         <Details>
           <Description>{galleryImage?.title || 'Description'}</Description>
           <VoteContainer>
-            <VoteWrapper>
+            <LikeWrapper>
               <Vote src="/icon/like.svg" alt="like" />
-              <Span>{galleryImage?.downs}</Span>
-            </VoteWrapper>
-            <VoteWrapper>
-              <Vote src="/icon/disLike.svg" alt="dislike" />
               <Span>{galleryImage?.ups}</Span>
-            </VoteWrapper>
-            <VoteWrapper>
-              <Vote src="/icon/score.png" alt="score" />
+            </LikeWrapper>
+            <DislikeWrapper>
+              <Vote src="/icon/disLike.svg" alt="dislike" />
+              <SpanDown>{galleryImage?.downs}</SpanDown>
+            </DislikeWrapper>
+            <ScoreWrapper>
+              <Vote src="/icon/score.svg" alt="score" />
               <Span>{galleryImage?.score}</Span>
-            </VoteWrapper>
+            </ScoreWrapper>
           </VoteContainer>
         </Details>
       </DescriptionContainer>

@@ -31,8 +31,11 @@ export const ItemWrapper = styled.div`
     text-align: center;
     font-size: 80%;
     box-shadow: 0 5px 6px -6px #777;
-    background: #c7d4ec;
+    background: #f5f3f3;
     border-radius: 6px;
     width: 100%;
+    &:hover {
+    box-shadow: 0 5px 6px -4px #212121;
+    }
   }
 `;
